@@ -132,7 +132,7 @@ func (c Client) search(vals url.Values) ([]NZB, error) {
 	if err != nil {
 		return nil, err
 	}
-	log.WithField("num", len(feed.Channel.NZBs)).Info("newznab:Client:Search: found NZBs")
+	log.WithField("num", len(feed.Channel.NZBs)).Debug("newznab:Client:Search: found NZBs")
 	for _, gotNZB := range feed.Channel.NZBs {
 		nzb := NZB{
 			Title:          gotNZB.Title,
